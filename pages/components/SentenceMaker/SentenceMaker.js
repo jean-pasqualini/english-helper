@@ -9,7 +9,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import {Card, CardContent} from "@material-ui/core";
 import SentencePaternBuilder from "./SentencePaternBuilder";
-import {SentenceContextProvider} from "../../context/sentence-context";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -33,14 +32,12 @@ const SentenceMaker = function() {
                   <Container className={classes.cardGrid}>
                             <Card>
                                 <CardContent>
-                                    <SentenceContextProvider>
                                         <Grid container spacing={1}>
                                             <SentencePaternBuilder />
                                             <Grid item xs={9} className={classes.sentenceRenderContainer}>
                                                 <SentenceRender />
                                             </Grid>
                                         </Grid>
-                                    </SentenceContextProvider>
                                 </CardContent>
                             </Card>
                             <Grid item xs={12}>

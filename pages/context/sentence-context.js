@@ -7,6 +7,7 @@ export const SentenceContext = createContext();
 
 const initialState = {
     parts: [],
+    partTypes: [],
 };
 
 const reducer = (state, action) => {
@@ -27,7 +28,7 @@ const reducer = (state, action) => {
 };
 
 export const SentenceContextProvider = props => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(reducer, props.initialState);
 
     return (
         <SentenceContext.Provider value={[state, dispatch]}>

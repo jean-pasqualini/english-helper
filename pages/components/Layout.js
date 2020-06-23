@@ -22,7 +22,6 @@ const Layout = function() {
 
     return (
         <React.Fragment>
-
             <CssBaseline />
             <Header/>
             <main>
