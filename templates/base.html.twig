@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="theme-color" content="#563d7c">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('app.css') }}">
+            {{ encore_entry_link_tags('css/app') }}
+        {% endblock %}
+    </head>
+    <body>
+    {% block body_layout %}
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">English tools to improve my english</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="{{ path('subtitle_list') }}">Subtitles</a>
+                    <a class="nav-link" href="{{ path('word_counter_list') }}">Word counted</a>
+                    <a class="nav-link" href="{{ path('sentence_list') }}">Sentence</a>
+                    <a class="nav-link active" href="{{ path('pos_tagging') }}">Pos tagging</a>
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer class="mastfoot mt-auto">
+        </footer>
+    </div>
+    {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

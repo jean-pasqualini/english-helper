@@ -1,0 +1,25 @@
+{
+  "name": "english-helper",
+  "version": "1.0.0",
+  "description": "- https://www.grammar-monster.com/ - https://www.englishclub.com/grammar/ - https://www.ego4u.com/en/cram-up/grammar - https://www.perfect-english-grammar.com/ - https://www.twilio.com/blog/building-a-single-page-application-with-symfony-php-and-react - https://7esl.com/wp-content/uploads/2018/05/12-tenses-2.jpg - https://7esl.com/grammar/",
+  "main": "index.js",
+  "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/styles": "^4.10.0",
+    "axios": "^0.19.2",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "",
+  "license": "ISC"
+}
