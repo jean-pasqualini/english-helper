@@ -3,6 +3,7 @@ import {Grid, Card, CardHeader, CardContent, Button} from '@material-ui/core';
 import {SentenceContext} from "../../context/sentence-context";
 const SentencePaternBuilder = function() {
 
+    console.log(useContext(SentenceContext));
     const [state, dispatch] = useContext(SentenceContext);
 
     const buildPattern = function() {

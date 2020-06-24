@@ -10,10 +10,10 @@ const Grammar = function () {
     return (
                     <Grid container spacing={3}>
                         <Grid item xs={3}>
-                            <GrammarTree partTypes={state.partTypes}/>
+                            <GrammarTree partTypes={{}}/>
                         </Grid>
                         <Grid item xs={9}>
-                            <GrammarBrowse partTypes={state.partTypes}/>
+                            <GrammarBrowse partTypes={{}}/>
                         </Grid>
                     </Grid>
     )

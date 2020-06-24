@@ -17,17 +17,22 @@ const reducer = (state, action) => {
                 parts: [
                     ...state.parts,
                     <Place description={action.payload.description} content={action.payload.content}/>
-                ]};
+                ], 
+                partTypes: state.partTypes
+            };
 
         case "EMPTY_PARTS":
-            return { parts: []};
+            return { 
+                parts: [], 
+                partTypes: state.partTypes
+            };
 
         default:
             throw new Error();
     }
 };
 
-export const SentenceContextProvider = props => {
+const SentenceContextProvider = props => {
     const [state, dispatch] = useReducer(reducer, props.initialState);
 
     return (
@@ -36,3 +41,5 @@ export const SentenceContextProvider = props => {
         </SentenceContext.Provider>
     );
 };
+
+export default SentenceContextProvider;
