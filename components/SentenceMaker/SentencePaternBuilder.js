@@ -1,6 +1,6 @@
 import React, {Component, useContext, useEffect, useState} from 'react';
 import {Grid, Card, CardHeader, CardContent, Button} from '@material-ui/core';
-import {SentenceContext} from "../../context/sentence-context";
+import {SentenceContext} from "../../pages/context/sentence-context";
 const SentencePaternBuilder = function() {
 
     const [state, dispatch] = useContext(SentenceContext);

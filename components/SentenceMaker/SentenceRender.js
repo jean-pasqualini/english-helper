@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DropTarget from "../DragDrop/DropTarget";
 import Place from "./Place";
-import {SentenceContext} from "../../context/sentence-context";
+import {SentenceContext} from "../../pages/context/sentence-context";
 
 const PartSpeechWrapper = styled.div`
    padding: 10px;
@@ -59,6 +59,9 @@ const SentenceRender = function() {
 
     return (
         <React.Fragment>
+            <div style={{"text-align": 'center'}}>
+                <Button type="submit" variant={"contained"} color="primary" size={"large"}>Make the sentence</Button>
+            </div>
             <div>
                 <DropTarget onItemDropped={onDrop}>
                     <PartSpeechWrapper>
@@ -66,9 +69,6 @@ const SentenceRender = function() {
                         <div className={classes.clear}/>
                     </PartSpeechWrapper>
                 </DropTarget>
-            </div>
-            <div style={{"text-align": 'center'}}>
-                <Button type="submit" variant={"contained"} color="primary" size={"large"}>Make the sentence</Button>
             </div>
         </React.Fragment>
     )

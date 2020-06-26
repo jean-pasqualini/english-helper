@@ -1,5 +1,5 @@
 import React, {createContext, useReducer} from "react";
-import Place from "../components/SentenceMaker/Place";
+import Place from "../../components/SentenceMaker/Place";
 
 export const SentenceContext = createContext();
 
@@ -26,7 +26,7 @@ const reducer = (state, action) => {
     }
 };
 
-export const SentenceContextProvider = props => {
+export default props => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return (

@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import {Card, CardContent} from "@material-ui/core";
 import SentencePaternBuilder from "./SentencePaternBuilder";
-import {SentenceContextProvider} from "../../context/sentence-context";
+import SentenceContextProvider from "../../pages/context/sentence-context";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
