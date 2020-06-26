@@ -9,7 +9,7 @@ const Grammar = function () {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axios('http://localhost:3000/api/language');
+            const result = await axios('/api/language');
             setPartTypes(result.data);
         };
 
