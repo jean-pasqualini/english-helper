@@ -5,6 +5,7 @@ import DropTarget from "../DragDrop/DropTarget";
 import Place from "./Place";
 import {SentenceContext} from "../../pages/context/sentence-context";
 import PlaceSeparator from "./PlaceSeparator";
+import SentenceReviewer from "./SentenceReviewer";
 
 const PartSpeechWrapper = styled.div`
    padding: 10px;
@@ -65,6 +66,9 @@ const SentenceRender = function() {
 
     return (
         <React.Fragment>
+            <div>
+                <SentenceReviewer/>
+            </div>
             <div>
                 <DropTarget onItemDropped={onDrop}>
                     <PartSpeechWrapper>

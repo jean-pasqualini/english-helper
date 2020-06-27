@@ -14,6 +14,19 @@ const SentencePaternBuilder = function() {
     const classes = useStyles();
     const [state, dispatch] = useContext(SentenceContext);
 
+    const patterns = [
+        'S-BE-NOUN',
+        'S-BE-ADJECTIVE',
+        'THERE-BE-S',
+        'S-V-ADVERB',
+        'S-LV-ADJECTIVE',
+        'S-V',
+        'S-V-DO',
+        'S-V-IO-DO',
+        'S-V-DO-ADJECTIVE',
+        'S-V-DO-NOUN',
+    ];
+
     const buildPattern = function() {
         dispatch({ type: 'EMPTY_PARTS' });
         dispatch({
@@ -65,6 +78,15 @@ const SentencePaternBuilder = function() {
                                 <MenuItem value={"simple"}>
                                     Simple
                                 </MenuItem>
+                                <MenuItem value={"continuous"}>
+                                    Continuous
+                                </MenuItem>
+                                <MenuItem value={"perfect_simple"}>
+                                    Perfect simple
+                                </MenuItem>
+                                <MenuItem value={"perfect_continuous"}>
+                                    Perfect continuous
+                                </MenuItem>
                             </Select>
                         </FormControl>
                     </li>
@@ -75,15 +97,28 @@ const SentencePaternBuilder = function() {
                                 <MenuItem value={"declarative"}>
                                     Declarative
                                 </MenuItem>
+                                <MenuItem value={"interrogative"}>
+                                    Interrogative
+                                </MenuItem>
+                                <MenuItem value={"imperative"}>
+                                    Imperative
+                                </MenuItem>
+                                <MenuItem value={"exclamatory"}>
+                                    Exclamatory
+                                </MenuItem>
                             </Select>
                         </FormControl>
                     </li>
+                    {/** Negative or not, conditionel or not */}
                     <li>
                         <strong>Active ou passive ?</strong>
                         <FormControl variant="outlined" className={classes.margin}>
                             <Select value={"active"}>
                                 <MenuItem value={"active"}>
                                     Active
+                                </MenuItem>
+                                <MenuItem value={"passive"}>
+                                    Passive
                                 </MenuItem>
                             </Select>
                         </FormControl>
@@ -95,16 +130,31 @@ const SentencePaternBuilder = function() {
                                 <MenuItem value={"simple"}>
                                     Simple sentence
                                 </MenuItem>
+                                <MenuItem value={"complex"}>
+                                    Complex sentence
+                                </MenuItem>
+                                <MenuItem value={"compound"}>
+                                    Compound sentence
+                                </MenuItem>
+                                <MenuItem value={"compound-complex"}>
+                                    Compound-Complex sentence
+                                </MenuItem>
                             </Select>
                         </FormControl>
                     </li>
                     <li>
                         <strong>Which sentence pattern ?</strong>
                         <FormControl variant="outlined" className={classes.margin}>
-                            <Select value={"sv"}>
-                                <MenuItem value={"sv"}>
-                                    S-V
-                                </MenuItem>
+                            <Select value={"S-V"}>
+                                {
+                                    patterns.map(item => {
+                                        return (
+                                            <MenuItem value={item}>
+                                                {item}
+                                            </MenuItem>
+                                        );
+                                    })
+                                }
                             </Select>
                         </FormControl>
                     </li>

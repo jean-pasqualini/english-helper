@@ -30,10 +30,10 @@ const Layout = function() {
             </main>
             <footer className={classes.footer}>
                 <Typography variant="h6" align="center" gutterBottom>
-                    Footer
+                    Sentence maker
                 </Typography>
                 <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                    Something here to give the footer a purpose!
+                    Created by <a href={"https://www.linkedin.com/in/jean-pasqualini/"} target={"_blank"}>jean pasqualini</a>
                 </Typography>
             </footer>
         </React.Fragment>
