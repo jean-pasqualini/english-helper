@@ -7,7 +7,7 @@ import SentenceComponentBrowser from "../SentenceComponentBrowser/SentenceCompon
 import SentenceRender from "./SentenceRender";
 import { makeStyles } from '@material-ui/core/styles';
 
-import {Card, CardContent} from "@material-ui/core";
+import {Paper} from "@material-ui/core";
 import SentencePaternBuilder from "./SentencePaternBuilder";
 import SentenceContextProvider from "../../pages/context/sentence-context";
 
@@ -31,8 +31,7 @@ const SentenceMaker = function() {
     return (
             <React.Fragment>
                   <Container className={classes.cardGrid}>
-                            <Card>
-                                <CardContent>
+                            <Paper>
                                     <SentenceContextProvider>
                                         <Grid container spacing={1}>
                                             <SentencePaternBuilder />
@@ -41,8 +40,7 @@ const SentenceMaker = function() {
                                             </Grid>
                                         </Grid>
                                     </SentenceContextProvider>
-                                </CardContent>
-                            </Card>
+                            </Paper>
                             <Grid item xs={12}>
                                 <SentenceComponentBrowser/>
                             </Grid>

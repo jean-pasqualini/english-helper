@@ -14,8 +14,22 @@ const DropTarget = function(props)
         }
     }
 
+    function dragEnter(ev)
+    {
+        if (typeof props.onDragEnter != 'undefined') {
+            props.onDragEnter(ev);
+        }
+    }
+
+    function dragLeave(ev)
+    {
+        if (typeof props.onDragLeave != 'undefined') {
+            props.onDragLeave(ev);
+        }
+    }
+
     return (
-        <div onDragOver={dragOver} onDrop={drop} data-key={"target"}>
+        <div onDragOver={dragOver} onDrop={drop} onDragEnter={dragEnter} onDragLeave={dragLeave} data-key={"target"}>
             {props.children}
         </div>);
 };

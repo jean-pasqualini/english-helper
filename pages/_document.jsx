@@ -39,6 +39,8 @@ class MyDocument extends Document {
               }
             `}
                     </style>
+
+                    <script src="http://localhost:8097" type={"text/javascript"}/>
                 </Head>
                 <body>
                 <Main />

@@ -102,6 +102,7 @@ const GrammarBrowse = function ({partTypes}) {
         return (
             <Grid item xs={3}>
                 <Card>
+                    <Draggable dataItem={item}>
                     <CardActionArea component={"div"}>
                         <CardMedia
                             component="img"
@@ -114,16 +115,15 @@ const GrammarBrowse = function ({partTypes}) {
                          - https://www.pluralsight.com/guides/drag-and-drop-react-components
                          */}
                         <CardContent>
-                            <Draggable dataItem={item}>
                                 <Typography gutterBottom variant="h5" component="h2">
                                     {item}
                                 </Typography>
-                            </Draggable>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 Description
                             </Typography>
                         </CardContent>
                     </CardActionArea>
+                    </Draggable>
                     <CardActions>
                         <Button size="small" color="primary">
                             Explore

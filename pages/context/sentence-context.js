@@ -1,5 +1,5 @@
 import React, {createContext, useReducer} from "react";
-import Place from "../../components/SentenceMaker/Place";
+import _ from "lodash";
 
 export const SentenceContext = createContext();
 
@@ -9,14 +9,30 @@ const initialState = {
     parts: [],
 };
 
+Array.prototype.insert = function ( index, item ) {
+    this.splice( index, 0, item );
+};
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "ADD_PART":
             return {
                 parts: [
                     ...state.parts,
-                    <Place description={action.payload.description} content={action.payload.content}/>
+                    action.payload
                 ]};
+        case "PLACE_PART":
+            const inMemory = [...state.parts];
+            inMemory.insert(
+                action.payload.key,
+                action.payload
+            );
+            return { parts: inMemory };
+
+        case "REMOVE_PART":
+            return {
+                parts: _.without(state.parts, state.parts[action.payload.key])
+            }
 
         case "EMPTY_PARTS":
             return { parts: []};

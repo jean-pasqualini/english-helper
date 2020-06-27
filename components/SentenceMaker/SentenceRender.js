@@ -1,17 +1,14 @@
 import React, {useContext, useState} from 'react';
-import _ from 'lodash';
-import {
-    Button
-} from '@material-ui/core';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import DropTarget from "../DragDrop/DropTarget";
 import Place from "./Place";
 import {SentenceContext} from "../../pages/context/sentence-context";
+import PlaceSeparator from "./PlaceSeparator";
 
 const PartSpeechWrapper = styled.div`
    padding: 10px;
-   background: red;
+   background: #eceef8;
    min-height: 50px;
    position: absolute;
    bottom: 5px;
@@ -52,20 +49,26 @@ const SentenceRender = function() {
 
     const handleRemovePart = function(event) {
         event.preventDefault();
-        this.setState({
-            parts: _.without(this.state.parts, this.state.parts[event.currentTarget.dataset.key])
-        });
+        dispatch({
+            type: 'REMOVE_PART',
+            payload: {
+                key: event.currentTarget.dataset.key
+            }
+        })
     }
+
+    const partsWithSeparator = [];
+    state.parts.forEach((item, key) => {
+        partsWithSeparator.push(<PlaceSeparator index={key}/>);
+       partsWithSeparator.push(<Place onClose={handleRemovePart} index={key} description={item.description} content={item.content}/> );
+    });
 
     return (
         <React.Fragment>
-            <div style={{"text-align": 'center'}}>
-                <Button type="submit" variant={"contained"} color="primary" size={"large"}>Make the sentence</Button>
-            </div>
             <div>
                 <DropTarget onItemDropped={onDrop}>
                     <PartSpeechWrapper>
-                        {state.parts}
+                        {partsWithSeparator}
                         <div className={classes.clear}/>
                     </PartSpeechWrapper>
                 </DropTarget>
