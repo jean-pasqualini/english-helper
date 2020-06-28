@@ -38,6 +38,7 @@ export default function({index})
             payload: {
                 key: index,
                 description: 'place',
+                accept: '',
                 content: text
             },
         })

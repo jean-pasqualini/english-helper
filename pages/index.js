@@ -1,8 +1,11 @@
 import Layout from "../components/Layout";
+import SentenceMaker from "../components/SentenceMaker/SentenceMaker";
 
 function HomePage() {
     return <div>
-        <Layout/>
+        <Layout>
+            <SentenceMaker/>
+        </Layout>
     </div>
 }
 

@@ -12,14 +12,6 @@ import SentencePaternBuilder from "./SentencePaternBuilder";
 import SentenceContextProvider from "../../pages/context/sentence-context";
 
 const useStyles = makeStyles((theme) => ({
-    cardGrid: {
-        paddingTop: theme.spacing(8),
-        paddingBottom: theme.spacing(8),
-    },
-    footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(6),
-    },
     sentenceRenderContainer: {
         position: 'relative'
     },
@@ -30,21 +22,19 @@ const SentenceMaker = function() {
 
     return (
             <React.Fragment>
-                  <Container className={classes.cardGrid}>
-                            <Paper>
-                                    <SentenceContextProvider>
-                                        <Grid container spacing={1}>
-                                            <SentencePaternBuilder />
-                                            <Grid item xs={9} className={classes.sentenceRenderContainer}>
-                                                <SentenceRender />
-                                            </Grid>
-                                        </Grid>
-                                    </SentenceContextProvider>
-                            </Paper>
-                            <Grid item xs={12}>
-                                <SentenceComponentBrowser/>
+                <Paper>
+                        <SentenceContextProvider>
+                            <Grid container spacing={1}>
+                                <SentencePaternBuilder />
+                                <Grid item xs={9} className={classes.sentenceRenderContainer}>
+                                    <SentenceRender />
+                                </Grid>
                             </Grid>
-                    </Container>
+                        </SentenceContextProvider>
+                </Paper>
+                <Grid item xs={12}>
+                    <SentenceComponentBrowser/>
+                </Grid>
             </React.Fragment>
     )
 }

@@ -6,6 +6,8 @@
 - https://www.twilio.com/blog/building-a-single-page-application-with-symfony-php-and-react
 - https://7esl.com/wp-content/uploads/2018/05/12-tenses-2.jpg
 - https://7esl.com/grammar/
+- https://github.com/FinNLP/en-inflectors
+- https://linguinecode.com/post/when-to-use-useref-and-uselayouteffect
 
 ## Lexique gramatical
 

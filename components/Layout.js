@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Typography from '@material-ui/core/Typography';
 import SentenceMaker from "./SentenceMaker/SentenceMaker";
+import {Container} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     cardGrid: {
@@ -17,16 +18,18 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Layout = function() {
+
+const Layout = function({children}) {
     const classes = useStyles();
 
     return (
         <React.Fragment>
-
             <CssBaseline />
             <Header/>
             <main>
-                <SentenceMaker/>
+                <Container className={classes.cardGrid}>
+                    {children}
+                </Container>
             </main>
             <footer className={classes.footer}>
                 <Typography variant="h6" align="center" gutterBottom>

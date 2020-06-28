@@ -1,5 +1,5 @@
 import React, {Component, useEffect, useState} from 'react';
-import {Grid, Paper} from '@material-ui/core';
+import {Grid, Paper, Link} from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -86,10 +86,7 @@ const GrammarBrowse = function ({partTypes}) {
                     </CardActionArea>
                     <CardActions>
                         <Button size="small" color="primary">
-                            Explore
-                        </Button>
-                        <Button size="small" color="primary">
-                            See more
+                            <Link href={"/explain/" + key} target={"_blank"}>See more</Link>
                         </Button>
                     </CardActions>
                 </Card>
@@ -124,14 +121,6 @@ const GrammarBrowse = function ({partTypes}) {
                         </CardContent>
                     </CardActionArea>
                     </Draggable>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Explore
-                        </Button>
-                        <Button size="small" color="primary">
-                            See more
-                        </Button>
-                    </CardActions>
                 </Card>
             </Grid>);
     };
