@@ -1,7 +1,10 @@
 import React, {createContext, useReducer} from "react";
-import reducer from "../../reducers/reducer";
+import mainReducer from "../../reducers/reducer";
 
-export const SentenceContext = createContext();
+type InitialStateType = {
+    parts: any,
+    sentencePattern: any,
+};
 
 const initialState = {
     parts: [],
@@ -15,12 +18,23 @@ const initialState = {
     },
 };
 
-export default props => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+const SentenceContext = createContext<{
+    state: InitialStateType;
+    dispatch: React.Dispatch<any>;
+}>({
+    state: initialState,
+    dispatch: () => null
+});
+
+const SentenceProvider: React.FC = ({children}) => {
+    const [state, dispatch] = useReducer(mainReducer, initialState);
 
     return (
-        <SentenceContext.Provider value={[state, dispatch]}>
-            {props.children}
+        <SentenceContext.Provider value={{state, dispatch}}>
+            {children}
         </SentenceContext.Provider>
     );
 };
+
+export { SentenceProvider, SentenceContext };
+export default SentenceProvider;

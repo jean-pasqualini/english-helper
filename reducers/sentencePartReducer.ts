@@ -1,4 +1,11 @@
-Array.prototype.insert = function ( index, item ) {
+import _ from 'lodash';
+
+interface Array<T> {
+    insert(index: any, item: any): void
+}
+
+// @ts-ignore
+Array.prototype.insert = function ( index: any, item: any ): void {
     this.splice( index, 0, item );
 };
 
@@ -8,6 +15,7 @@ const sentencePartReducer = (state, action) => {
             return [...state.parts, action.payload]
         case "PLACE_PART":
             const parts = [...state.parts];
+            // @ts-ignore
             parts.insert(
                 action.payload.key,
                 action.payload

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SentencePaternBuilder = function() {
     const classes = useStyles();
-    const [state, dispatch] = useContext(SentenceContext);
+    const {state, dispatch} = useContext(SentenceContext);
     const [formData, updateFormData] = useState(state.sentencePattern);
 
     const patterns = [
@@ -179,7 +179,7 @@ const SentencePaternBuilder = function() {
                         </li>
                     </ul>
 
-                    <div style={{"text-align": "center"}}>
+                    <div style={{"text-align": "center"} as React.CSSProperties}>
                         <Button size={"large"} variant={"contained"} color={"primary"} type={"submit"}>Build the pattern</Button>
                     </div>
                 </form>

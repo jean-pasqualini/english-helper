@@ -22,14 +22,14 @@ const GrammarTree = function ({partTypes}) {
                     if (typeof obj[key] === 'string') {
                         return (
                             <Draggable dataItem={obj[key]}>
-                                <StyledTreeItem nodeId={key} labelText={obj[key]} labelIcon={QueueIcon}/>
+                                <StyledTreeItem labelText={obj[key]} labelIcon={QueueIcon}/>
                             </Draggable>
                         );
                     }
                     if (typeof obj[key] === 'object') {
                         return (
                             <React.Fragment>
-                                <StyledTreeItem nodeId={key} labelText={key} labelIcon={FolderIcon}>
+                                <StyledTreeItem labelText={key} labelIcon={FolderIcon}>
                                     {tree(obj[key])}
                                 </StyledTreeItem>
                             </React.Fragment>
@@ -90,14 +90,6 @@ const GrammarTree = function ({partTypes}) {
             flexGrow: 1,
         },
     }));
-
-    StyledTreeItem.propTypes = {
-        bgColor: PropTypes.string,
-        color: PropTypes.string,
-        labelIcon: PropTypes.elementType.isRequired,
-        labelInfo: PropTypes.string,
-        labelText: PropTypes.string.isRequired,
-    };
 
     const useStyles = makeStyles({
         root: {

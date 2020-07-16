@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import {Paper} from "@material-ui/core";
 import SentencePaternBuilder from "./SentencePaternBuilder";
-import SentenceContextProvider from "../../pages/context/sentence-context";
+import {SentenceProvider} from "../../pages/context/sentence-context";
 
 const useStyles = makeStyles((theme) => ({
     sentenceRenderContainer: {
@@ -23,14 +23,14 @@ const SentenceMaker = function() {
     return (
             <React.Fragment>
                 <Paper>
-                        <SentenceContextProvider>
+                        <SentenceProvider>
                             <Grid container spacing={1}>
                                 <SentencePaternBuilder />
                                 <Grid item xs={9} className={classes.sentenceRenderContainer}>
                                     <SentenceRender />
                                 </Grid>
                             </Grid>
-                        </SentenceContextProvider>
+                        </SentenceProvider>
                 </Paper>
                 <Grid item xs={12}>
                     <SentenceComponentBrowser/>

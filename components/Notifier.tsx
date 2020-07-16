@@ -1,9 +1,21 @@
 import React from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 
+interface NotifierProps {
+    register: (open: (messages: any) => void) => void
+}
+
+interface NotifierState {
+    open: boolean,
+    message: string,
+}
+
 class Notifier extends React.Component {
-    constructor() {
-        super();
+    props: NotifierProps;
+    state: NotifierState;
+
+    constructor(props: NotifierProps, state: NotifierState) {
+        super(props, state);
         this.state = {
             open: false,
             message: '',
@@ -44,9 +56,6 @@ class Notifier extends React.Component {
                 autoHideDuration={500}
                 onClose={this.handleSnackbarClose}
                 open={this.state.open}
-                SnackbarContentProps={{
-                    'aria-describedby': 'snackbar-message-id',
-                }}
             />
         );
     }

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SentenceRender = function() {
     const classes = useStyles();
-    const [state, dispatch] = useContext(SentenceContext);
+    const {state, dispatch} = useContext(SentenceContext);
 
     const onDrop = function(value) {
         console.log("add : " + value);

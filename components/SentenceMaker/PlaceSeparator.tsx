@@ -28,7 +28,7 @@ const useStyles = makeStyles({
 export default function({index})
 {
     const classes = useStyles();
-    const [state, dispatch] = useContext(SentenceContext);
+    const {state, dispatch} = useContext(SentenceContext);
     const [hover, setHover] = useState(false);
 
     const onItemDropped = function (text) {
